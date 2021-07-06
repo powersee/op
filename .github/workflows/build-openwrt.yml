@@ -188,3 +188,8 @@ jobs:
         delete_tags: true
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Send notion
+      run: |
+        curl -k --data "text=OpenWrt 编译结束" http://iyuu.cn/${ secrets.IYUUTOKEN }.send
+
